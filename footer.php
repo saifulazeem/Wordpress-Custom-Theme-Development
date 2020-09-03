@@ -22,4 +22,6 @@ This file will be used to Display footer of webiste its a part of template file.
     <p>© 2020 All copyrights Reserved <a href="#fileinfo.com">fileinfo</a></p>
 </div>
 </body>
+
+<?php wp_footer(); ?>
 </html>

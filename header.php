@@ -19,11 +19,14 @@ This file will be used to Display header of webiste its a part of template file.
 <html>
 <head>
     <meta charset="utf-8">
-    <title>home</title>
+    <title>
+        <?php echo get_the_title(); ?>|
+        <?php bloginfo('name');  ?>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
-    
+    <!-- <link rel="stylesheet" type="text/css" href= //bloginfo('template_url'); ?>/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href=" //bloginfo('stylesheet_url'); ?>"> -->
+    <?php wp_head(); ?>
 </head>
 
 
@@ -31,32 +34,29 @@ This file will be used to Display header of webiste its a part of template file.
 <body>
 
     <div class="container-fluid" id="header">
+        <header class="site-header">
+            <div style="width: 100px; height:100px;"><?php the_custom_logo(); ?></div>
         
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
- 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                 </li>
-                <li class="nav-item">
-                     <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                     <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-             </ul>
-        </div>
-        <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-            <input  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        </nav>
-    </nav>
 
+        <br>
+        <br>
+    
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="#">FileTypes</a></li>
+                <li class="nav-item"><a class="nav-link " href="#">Help</a></li>
+            
+            </ul>
+            <br>
+            <br>
+            <form class="row " >
+        <div class="col-2"></div>
+        <input  type="email" class="col-6 form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search Files here...">
+        <div class="col-1"></div>
+        <button class="col-1 btn btn-primary">Search</button>
+        </form>
+        <br>
+        
+    </header>
     </div>
 <br>
