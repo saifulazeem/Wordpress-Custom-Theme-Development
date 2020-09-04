@@ -1,6 +1,6 @@
 <?php
 
-
+//require_once('wp_bootstrap_navlist_walker.php');
 
 /*
 
@@ -14,7 +14,37 @@ Also work as mini Plugin.
 
 */
 
-add_theme_support('custom-logo');
+
+
+// function wp_fileinfo_theme_setup()
+// {
+//     register_nav_menus(
+//         array(
+//                 'primary' => __('Primary Menu','FileInfo'),
+//         )
+//         );
+// }
+// add_action('after_setup_theme','wp_fileinfo_theme_setup');
+
+
+
+
+function wp_fileinfo_theme_setup()
+{
+    add_theme_support('custom-logo');
+
+    register_nav_menus( array(
+        'primary'   => __( 'Primary Menu', 'wp_fileinfo' )
+        
+    ) );
+
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('automatic-feed-links');
+}
+
+add_action('after_setup_theme', 'wp_fileinfo_theme_setup');
+
 
 function wp_fileinfo_theme_scripts ()
 {
